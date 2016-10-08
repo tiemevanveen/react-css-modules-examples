@@ -1,4 +1,4 @@
-$size: 48px;
+@import './utils.scss';
 
 .table {
     width: 200px;
@@ -12,13 +12,17 @@ $size: 48px;
 }
 
 .table {
-    border: 1px solid #000;
+    @include border(#000);
+
+    @include mediaquery('phablet') {
+        @include border(#0f0);
+    }
 }
 
 .row {
-    border: 1px solid #f00;
+    @include border(#f00);
 }
 
 .cell {
-    border: 1px solid #00f; padding: 10px;
+    @include border(#00f); padding: 10px;
 }
