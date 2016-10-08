@@ -1,14 +1,14 @@
 .table {
-    composes: table from './../table.css';
+    composes: table from './../table.scss';
 }
 
 .row {
-    composes: row from './../table.css';
+    composes: row from './../table.scss';
 }
 
 /* .cell {
-    composes: cell from './table.css';
-} */
+    composes: cell from './../table.scss';
+}*/
 
 .table {
     width: 400px;
