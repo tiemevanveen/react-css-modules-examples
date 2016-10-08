@@ -1,10 +1,12 @@
 var webpack,
     path,
     WriteFilePlugin,
+    autoprefixer,
     devServer;
 
 webpack = require('webpack');
 path = require('path');
+autoprefixer = require('autoprefixer');
 ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 devServer = {
@@ -46,10 +48,14 @@ module.exports = {
         loaders: [
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract(
+                loaders: [
                     'style',
-                    'css?modules&importLoaders=1&localIdentName=[path]__[local]___[hash:base64:5]!sass'
-                )
+                    'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
+                    'postcss-loader',
+                    // this also fails:
+                    // 'postcss-loader?parser=postcss-scss',
+                    'sass'
+                ]
             },
             {
                 test: /\.js$/,
@@ -60,6 +66,9 @@ module.exports = {
             }
         ]
     },
+    postcss: [
+        autoprefixer({ browsers: ['> 0.5%'] })
+    ],
     resolve: {
         extensions: [
             '',
