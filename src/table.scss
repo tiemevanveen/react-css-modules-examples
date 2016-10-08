@@ -1,3 +1,5 @@
+$size: 48px;
+
 .table {
     width: 200px;
 }
@@ -6,6 +8,7 @@
 .row,
 .cell {
     margin: 10px; overflow: hidden;
+    font-size: $size;
 }
 
 .table {

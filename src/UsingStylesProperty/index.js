@@ -1,6 +1,6 @@
 import React from 'react';
 import CSSModules from 'react-css-modules';
-import styles from './../table.css';
+import styles from './../table.scss';
 
 let Table;
 
