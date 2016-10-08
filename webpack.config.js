@@ -48,7 +48,7 @@ module.exports = {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract(
                     'style',
-                    'css?modules&importLoaders=1&localIdentName=[path]__[local]___[hash:base64:5]!resolve-url!sass'
+                    'css?modules&importLoaders=1&localIdentName=[path]__[local]___[hash:base64:5]!sass'
                 )
             },
             {
