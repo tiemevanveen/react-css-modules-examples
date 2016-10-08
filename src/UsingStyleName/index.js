@@ -1,6 +1,6 @@
 import React from 'react';
 import CSSModules from 'react-css-modules';
-import styles from './../table.css';
+import styles from './../table.scss';
 
 let Table;
 
@@ -16,7 +16,7 @@ Table = class extends React.Component {
             this.setState({
                 count: this.state.count + 1
             });
-        }, 10);
+        }, 1000);
     }
 
     render () {
